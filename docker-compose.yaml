@@ -1,0 +1,16 @@
+
+services:
+  llama-server:
+    image: achachraf/llamacpp-qwen-2.5-1.5b:1.0.0
+    env_file: .env
+    ports:
+      - "${LLAMA_SERVER_PORT}:${LLAMA_SERVER_PORT}"
+    volumes:
+      - "${LLAMACPP_QWEN_PATH}:${LLAMACPP_QWEN_PATH}"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://${LLAMA_SERVER_HOST}:${LLAMA_SERVER_PORT}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
