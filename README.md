@@ -13,7 +13,7 @@ This project sets up a Dockerized version of the [`llama.cpp`](https://github.co
 
 ## Environment Setup
 
-1. **Create the `.env` file** in the project root with content similar to:
+1. **the `.env` file** is provided by default. You can modify it to suit your needs.:
 
     ```dotenv
     LLAMACPP_QWEN_PATH=/opt/llamacpp-qwen
@@ -32,7 +32,7 @@ This project sets up a Dockerized version of the [`llama.cpp`](https://github.co
     TOP_P=0.95
     ```
 
-    Adjust these variables as needed.
+These variables are suitable for running the Qwen model. You can modify them to suit your needs.
 
 ## Installation
 
@@ -86,6 +86,7 @@ Add at the end of the file:
 
 ```json
 {
+   ...
   "tabAutocompleteModel": {
     "title": "Qween 2.5 0.5B Coder",
     "provider": "llama.cpp",
@@ -110,3 +111,5 @@ Add in the `models` array:
     }
 ]
 ```
+
+The configuration is the same for VSCode.
